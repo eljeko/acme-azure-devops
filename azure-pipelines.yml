@@ -25,3 +25,4 @@ steps:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'acme-azure'
     version: oc start-build acmeapp --from-file=web-app/target/ROOT.war --namespace=azure-pipeline-test
+    uselocalOc: true
