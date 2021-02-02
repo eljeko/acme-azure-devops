@@ -22,7 +22,7 @@ steps:
     goals: 'package'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/web-app/target'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/web-app/target/ROOT.war'
     ArtifactName: 'acmeapp'
 - task: oc-cmd@2
   inputs:
