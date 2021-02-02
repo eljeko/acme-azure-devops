@@ -24,5 +24,5 @@ steps:
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'acme-azure'
-    cmd: oc start-build acmeapp --from-file=$(System.DefaultWorkingDirectory)/web-app/target/ROOT.war --namespace=azure-pipeline-test
+    cmd: oc start-build acmeapp --from-file=$(System.DefaultWorkingDirectory)/web-app/target/ROOT.war --namespace=$(NAMESPACE)
     uselocalOc: true
