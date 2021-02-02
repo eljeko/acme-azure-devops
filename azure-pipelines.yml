@@ -20,8 +20,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: PublishBuildArtifacts@1
+- task: oc-cmd@2
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'acmeapp'
-    publishLocation: 'Container'
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'acme-azure'
+    version: oc start-build acmeapp --from-file=web-app/target/ROOT.war --namespace=azure-pipeline-test
